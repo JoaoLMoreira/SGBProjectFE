@@ -1,0 +1,42 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+    mat-sidenav-container {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      
+      mat-sidenav-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f5f5f5;
+  
+        mat-toolbar {
+          width: 100%;
+          display: flex;
+          
+          min-height: 64px !important;
+        }
+  
+        main {
+          flex:1;
+          width: 70%;
+          margin: 32px 0px;
+          background-color: #fff; 
+          border-radius: 16px;
+        }
+      }
+      
+      mat-sidenav {
+        padding: 16px;
+        width: 20%;
+        min-width: 300px;
+      }
+    }
+  }
+  .flex-spacer{flex:1 1 auto}
+  .open { margin-left: 32px !important; }

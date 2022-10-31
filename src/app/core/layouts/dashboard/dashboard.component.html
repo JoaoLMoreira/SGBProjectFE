@@ -1,0 +1,34 @@
+<mat-sidenav-container>
+    <mat-sidenav
+      [mode]="'side'"
+      [opened]="opened">
+      <mat-list role="list">
+        <div class="subheader" mat-subheader>Personagens</div>
+          <mat-list-item [routerLink]="['/']">
+            <mat-icon mat-list-icon>
+            </mat-icon>
+            <div mat-line>joãozinho</div>
+          </mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>SGB</span>
+        <span class="flex-spacer"></span>
+        <button mat-icon-button>
+          <mat-icon>book</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </mat-toolbar>
+  
+      <main class="mat-elevation-z8">
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
