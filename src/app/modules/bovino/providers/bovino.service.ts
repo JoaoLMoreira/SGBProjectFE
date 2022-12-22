@@ -8,10 +8,10 @@ import { environment } from 'src/environments/environment';
 export class BovinoService {
   private endpoint = environment.backendUrl + 'bovinos';
   
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
   
   getAll(){
-    return this.http.get<any[]>(this.endpoint)
+    return this.http.get<any[]>("https://localhost:7045/api/bovinos")
   }
 
   getOne(id:string){

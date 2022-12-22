@@ -2,14 +2,23 @@
     <mat-sidenav
       [mode]="'side'"
       [opened]="opened">
-      <mat-list role="list">
-        <div class="subheader" mat-subheader>Personagens</div>
-          <mat-list-item [routerLink]="['/']">
-            <mat-icon mat-list-icon>
-            </mat-icon>
-            <div mat-line>joãozinho</div>
-          </mat-list-item>
-      </mat-list>
+      <mat-selection-list role="list" [multiple]="false">
+          <mat-list-option [routerLink]="['/bovinos']">
+            <span mat-list-icon>🐮
+            </span>
+            <div mat-line>Bovinos</div>
+          </mat-list-option>
+          <mat-list-option [routerLink]="['/bovinos']">
+            <span mat-list-icon>💉
+            </span>
+            <div mat-line>Vacinas</div>
+          </mat-list-option>
+          <mat-list-option [routerLink]="['/bovinos']">
+            <span mat-list-icon>👨🏿
+            </span>
+            <div mat-line>Usuarios</div>
+          </mat-list-option>
+      </mat-selection-list>
     </mat-sidenav>
   
     <mat-sidenav-content>

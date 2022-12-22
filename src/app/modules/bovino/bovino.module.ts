@@ -6,8 +6,14 @@ import { BovinoComponent } from './bovino.component';
 import { BovinoListComponent } from './views/bovino-list/bovino-list.component';
 import { BovinoFormComponent } from './views/bovino-form/bovino-form.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BovinoService } from './providers/bovino.service';
+import { NgxsModule } from '@ngxs/store';
+import { BovinoState } from './store/bovino.state';
+import { MatTableModule } from '@angular/material/table';
 
+import {MatMenuModule} from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -18,10 +24,14 @@ import { BovinoService } from './providers/bovino.service';
   imports: [
     CommonModule,
     BovinoRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatMenuModule,
+    MatIconModule,
+    MatListModule,
+    MatButtonModule,
+    NgxsModule.forFeature([BovinoState])
   ],
-  providers:[
-    BovinoService
-  ]
+
 })
 export class BovinoModule { }
