@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       {
         path:'bovinos',
-        component:BovinoListComponent
+        component: BovinoListComponent
       },
       {
         path:'bovinos/adicionar',

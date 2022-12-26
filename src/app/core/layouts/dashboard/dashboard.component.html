@@ -1,3 +1,16 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Sistema Gerenciador de Bovinos</span>
+  <span class="flex-spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>book</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav
       [mode]="'side'"
@@ -8,35 +21,41 @@
             </span>
             <div mat-line>Bovinos</div>
           </mat-list-option>
-          <mat-list-option [routerLink]="['/bovinos']">
+          <mat-list-option [routerLink]="['/Vacinas']">
             <span mat-list-icon>💉
             </span>
             <div mat-line>Vacinas</div>
           </mat-list-option>
-          <mat-list-option [routerLink]="['/bovinos']">
+          <mat-list-option [routerLink]="['/Usuarios']">
+            <span mat-list-icon>🥩
+            </span>
+            <div mat-line>Baixas</div>
+          </mat-list-option>
+          <mat-list-option [routerLink]="['/Usuarios']">
             <span mat-list-icon>👨🏿
             </span>
             <div mat-line>Usuarios</div>
           </mat-list-option>
+          <mat-list-option [routerLink]="['/Usuarios']">
+            <span mat-list-icon>🔨
+            </span>
+            <div mat-line>Configurações</div>
+          </mat-list-option>
       </mat-selection-list>
     </mat-sidenav>
-  
+ 
     <mat-sidenav-content>
-      <mat-toolbar color="primary">
-        <button mat-icon-button (click)="toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <span>SGB</span>
-        <span class="flex-spacer"></span>
-        <button mat-icon-button>
-          <mat-icon>book</mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon>account_circle</mat-icon>
-        </button>
-      </mat-toolbar>
+      
   
-      <main class="mat-elevation-z8">
+      <main>        
+        <input routerLinkActive type="hidden" [routerLink]="'home'" #home="routerLinkActive" />
+        <mat-toolbar *ngIf="!(activeUrl==='/')" class="toolbar" [routerLink]="['/']">
+          Cadastro de {{ formName() }}
+          <span class="flex-spacer"></span>
+          <button mat-icon-button> 
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-toolbar>
         <router-outlet></router-outlet>
       </main>
     </mat-sidenav-content>

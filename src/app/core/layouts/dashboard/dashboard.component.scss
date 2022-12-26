@@ -24,10 +24,8 @@
   
         main {
           flex:1;
-          width: 70%;
-          margin: 32px 0px;
+          width: 100%;
           background-color: #fff; 
-          border-radius: 16px;
         }
       }
       
@@ -38,5 +36,12 @@
       }
     }
   }
-  .flex-spacer{flex:1 1 auto}
+
   .open { margin-left: 32px !important; }
+  .toolbar {
+    background-color: #3949ab;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

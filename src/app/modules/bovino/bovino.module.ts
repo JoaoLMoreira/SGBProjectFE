@@ -1,19 +1,19 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { NgxsModule } from '@ngxs/store';
 
 import { BovinoRoutingModule } from './bovino-routing.module';
 import { BovinoComponent } from './bovino.component';
-import { BovinoListComponent } from './views/bovino-list/bovino-list.component';
-import { BovinoFormComponent } from './views/bovino-form/bovino-form.component';
-import { HttpClientModule } from '@angular/common/http';
-import { NgxsModule } from '@ngxs/store';
 import { BovinoState } from './store/bovino.state';
-import { MatTableModule } from '@angular/material/table';
-
-import {MatMenuModule} from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatListModule } from '@angular/material/list';
+import { BovinoFormComponent } from './views/bovino-form/bovino-form.component';
+import { BovinoListComponent } from './views/bovino-list/bovino-list.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatListModule,
     MatButtonModule,
+    MatToolbarModule,
     NgxsModule.forFeature([BovinoState])
   ],
 
